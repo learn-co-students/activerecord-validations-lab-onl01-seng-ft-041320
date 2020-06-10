@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 
     def clickbait
         clickbait = Regexp.new("(Won't Believe)|(Top) \d*|(Secret)|(Guess)")
-        if title && !title.match(clickbait)
+        if title && !title.match?(clickbait)
           errors.add(:title, "That's not clickbait!")
         end
     end
